@@ -23,7 +23,7 @@ class Registration extends Component
     public $visitDate = '';
     public $visitTime = '';
     public $poli = '';
-    public $doctorCode = 'obgusup';
+    public $doctorCode = 'OKEUSOP';
     public $visitType = 'POLI'; // IGD or POLI
     public $paymentType = 'PRIBADI';
     public $diagnosis = '';
