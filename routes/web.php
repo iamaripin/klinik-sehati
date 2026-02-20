@@ -29,6 +29,7 @@ use App\Livewire\Patient\MedicalRecord;
 use App\Livewire\Admission\Registration as AdmissionRegistration;
 use App\Livewire\Admission\Payment as AdmissionPayment;
 use App\Http\Controllers\DisplayAntrian;
+use App\Http\Controllers\PrintInvoice;
 
 Route::get('/', function () {
     return view('welcome');
