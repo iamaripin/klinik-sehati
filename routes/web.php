@@ -33,6 +33,8 @@ use App\Http\Controllers\DisplayAntrian;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/insert', [PrintInvoice::class, 'store']);
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class);
 
