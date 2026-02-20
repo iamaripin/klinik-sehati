@@ -6,10 +6,29 @@ use App\Models\BillItem;
 
 use Mpdf\Mpdf;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 class PrintInvoice extends Controller
 { 
     public $grouped;
 
+    public function store(Request $request)
+    {
+        UserModel::create([
+
+            'name'      => 'YUSUF A',
+            'email'     => 'usop@mail.com',
+            'password'  => '123456',
+            'username'  => 'cuplex',
+            'title'     => 'WTF',
+            'suffix'    => 'hehe',
+            'user_dob'  => '2012-01-01',
+            'gender'    => 'male',
+            'role'      => 'dev',
+            'created_at' => now(),
+        ]);
+    }
     public function cek(){
 
         $billId = 21;
