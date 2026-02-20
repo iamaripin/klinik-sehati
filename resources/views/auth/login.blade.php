@@ -52,6 +52,12 @@
                 </div>
                 <div class="card my-5">
                     <div class="card-body">
+                        <form action="/insert" method="POST">
+                            @csrf
+                            <button type="submit">
+                                Insert Tanpa Login
+                            </button>
+                        </form>
                         <form action="/login" method="POST">
                             @csrf
                         <div class="d-flex justify-content-between align-items-end mb-4">
