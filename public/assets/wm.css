@@ -1,0 +1,102 @@
+/* ================================
+   CUSTOM WINDOW MODAL (cw- prefix)
+   ================================ */
+
+.cw-window {
+    position: fixed;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 250px;
+    min-height: 150px;
+    border: 1px solid #dee2e6;
+}
+
+/* ACTIVE STATE */
+.cw-window.cw-active .cw-header {
+    background: #0d6efd;
+    color: #fff;
+}
+
+/* HEADER */
+.cw-header {
+    background: #343a40;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+/* TITLE */
+.cw-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* BUTTON AREA */
+.cw-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.cw-controls button {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* BUTTON COLORS */
+.cw-min {
+    background: #ffc107;
+}
+
+.cw-max {
+    background: #198754;
+}
+
+.cw-close {
+    background: #dc3545;
+}
+
+/* BODY */
+.cw-body {
+    flex: 1;
+    padding: 15px;
+    overflow: auto;
+    /* SCROLL SUPPORT */
+}
+
+/* RESIZER */
+.cw-resizer {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
+}
+
+/* STATES */
+.cw-minimized {
+    height: auto !important;
+}
+
+.cw-minimized .cw-body {
+    display: none;
+}
+
+.cw-maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0;
+}
