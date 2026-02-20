@@ -447,7 +447,7 @@ class Registration extends Component
     {
         return view('livewire.admission.registration',
             [
-                'doctor' => Doctor::orderBy('doctor_code')->where('doctor_code', 'obgusup')->first(),
+                'doctor' => Doctor::orderBy('doctor_code')->where('doctor_code', 'OKEUSOP')->first(),
                 'registrations' => Admission::with(['patient', 'doctor','generalQueue'])
                                     ->where('status', 'REGISTERED')
                                     ->where('visit_date', now()->format('Y-m-d'))
