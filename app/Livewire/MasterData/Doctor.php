@@ -121,7 +121,7 @@ class Doctor extends Component
                 'specialist'     => $this->specialist,
                 'sip_number'     => $this->sip_number,
                 'sip_expiry'     => $this->sip_expiry,
-                'updated_by'     => auth()->user()->username,
+                'updated_by'     => auth()->id(),
             ]);
 
             $this->dispatch('toastr:info', message: 'Data dokter berhasil diperbarui!');
@@ -145,7 +145,7 @@ class Doctor extends Component
                 'specialist'     => $this->specialist,
                 'sip_number'     => $this->sip_number,
                 'sip_expiry'     => $this->sip_expiry,
-                'created_by'     => auth()->user()->username,
+                'created_by'     => auth()->id(),
                 'created_at'     => now(),
             ]);
 
