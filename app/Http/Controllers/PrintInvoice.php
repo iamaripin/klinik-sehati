@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use App\Models\BillItem;
+use App\Models\User as UserModel;
 
 use Mpdf\Mpdf;
 
