@@ -15,8 +15,7 @@ return new class extends Migration
             $table->string('code', 10)->unique(); // contoh: A00, E11.9
 
             // Deskripsi
-            $table->text('description');
-
+            $table->string('description', 255);
             // Chapter (opsional tapi sangat berguna)
             $table->string('chapter', 100)->nullable();
 
