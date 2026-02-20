@@ -29,10 +29,6 @@ class Registration extends Component
     public $diagnosis = '';
     public $complaint = '';
     public $reservationCode = '';
-    // Insurance fields
-    public $insurance_number_at_visit;
-    public $insurance_company_at_visit;
-    public $insurance_used = false;
 
     // Patient form
     public $selectedMrCode = null;
@@ -74,8 +70,6 @@ class Registration extends Component
         $this->diagnosis = $admission->diagnosis;
         $this->complaint = $admission->complaint;
         $this->reservationCode = $admission->reservation_code;
-        $this->insurance_number_at_visit = $admission->insurance_number_at_visit;
-        $this->insurance_company_at_visit = $admission->insurance_company_at_visit;
         
         $this->dispatch('show-form');
     }
@@ -153,9 +147,6 @@ class Registration extends Component
         $this->diagnosis = '';
         $this->complaint = '';
         $this->reservationCode = '';
-        $this->insurance_number_at_visit = '';
-        $this->insurance_company_at_visit = '';
-        $this->insurance_used = false;
     }
 
     // Generate visit_no in format JLN-mr_code-XXX
@@ -296,8 +287,6 @@ class Registration extends Component
                 'visitType.required' => 'Jenis kunjungan wajib dipilih.',
                 'paymentType.required' => 'Tipe pembayaran wajib dipilih.',
                 'complaint.required' => 'Keluhan wajib diisi.',
-                'insurance_number_at_visit.required' => 'Nomor asuransi wajib diisi untuk BPJS/Asuransi.',
-                'insurance_company_at_visit.required' => 'Nama perusahaan asuransi wajib diisi untuk BPJS/Asuransi.',
             ]);
 
             if (!$this->selectedPatient) {
@@ -331,9 +320,6 @@ class Registration extends Component
                         'complaint' => $this->complaint,
                         'reservation_code' => $this->reservationCode,
                         'status' => 'REGISTERED',
-                        'insurance_used' => in_array($this->paymentType, ['BPJS', 'ASURANSI']) ? true : false,
-                        'insurance_number_at_visit' => in_array($this->paymentType, ['BPJS', 'ASURANSI']) ? $this->insurance_number_at_visit : null,
-                        'insurance_company_at_visit' => in_array($this->paymentType, ['BPJS', 'ASURANSI']) ? $this->insurance_company_at_visit : null,
                         'created_by' => auth()->user()->username ?? null,
                         'created_at' => now(),
                         'updated_at' => now(),
