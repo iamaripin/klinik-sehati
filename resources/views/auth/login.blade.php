@@ -51,13 +51,7 @@
                     <a href="#"><img src="../assets/images/logo-dark.svg" alt="img"></a>
                 </div>
                 <div class="card my-5">
-                    <div class="card-body">
-                        <form action="/insert" method="POST">
-                            @csrf
-                            <button type="submit">
-                                Insert Tanpa Login
-                            </button>
-                        </form>
+                    <div class="card-body"> 
                         <form action="/login" method="POST">
                             @csrf
                         <div class="d-flex justify-content-between align-items-end mb-4">
